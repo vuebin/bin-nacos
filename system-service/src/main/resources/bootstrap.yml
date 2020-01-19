@@ -1,0 +1,21 @@
+server:
+  port: 8002
+
+spring:
+  profiles:
+    active: @spring.active@
+  application:
+    name: @artifactId@
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+      config:
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+        file-extension: yml   #dataId的全称就是application.name + file-extension
+        ext-config[0]:
+          data-id: bin-common.yml
+
+#bin:
+#  name: 冯佳斌
+#  service: 服务

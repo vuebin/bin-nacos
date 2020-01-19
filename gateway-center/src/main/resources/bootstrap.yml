@@ -1,0 +1,19 @@
+server:
+  port: 8000
+
+spring:
+  application:
+    name: gateway-center
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848,127.0.0.1:8849,127.0.0.1:8850
+        namespace: fabc14cc-b4f9-43ac-bf61-02ab83e925e5
+        cluster-name: DEFAULT
+      config:
+        server-addr: 127.0.0.1:8848,127.0.0.1:8849,127.0.0.1:8850
+        file-extension: yml   #dataId的全称就是application.name + file-extension
+        namespace: fabc14cc-b4f9-43ac-bf61-02ab83e925e5     #开发环境 dev prod test
+        group: bin-nacos      #组 - 项目名

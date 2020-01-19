@@ -1,0 +1,15 @@
+server:
+  port: 8003
+
+spring:
+  profiles:
+    active: @spring.active@
+  application:
+    name: @artifactId@
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+      config:
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+        file-extension: yml   #dataId的全称就是application.name + file-extension
